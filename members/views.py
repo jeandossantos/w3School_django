@@ -9,10 +9,10 @@ def members(request):
         'data': members
     })
     
-def details(request, id):
+def details(request, slug):
     #id = request.GET.get('id')
     
-    member = Member.objects.get(id=id)
+    member = Member.objects.get(slug=slug)
     
     return render(request, 'details.html', {
         'member': member

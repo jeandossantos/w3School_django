@@ -4,7 +4,7 @@ members {% endblock %} {% block content %}
   <h1>Members</h1>
   <ul>
     {% for x in data %}
-    <li onclick="window.location = '/members/details/{{ x.id }}'">
+    <li onclick="window.location = '/members/details/{{ x.slug }}'">
       {{ x.firstname }} {{ x.lastname }}
     </li>
     {% endfor %}
