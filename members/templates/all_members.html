@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>-Tennis Club - All members</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    {% extends "master.html" %} {% block title %} My Tennis Club - List of all
-    members {% endblock %} {% block content %}
-    <h1>Members</h1>
-    <p><a href="/">HOME</a></p>
-    <ul>
-      {% for member in data %}
-      <li>
-        <a href="/members/details/{{ member.id }}"
-          >{{ member.firstname }} {{ member.lastname }}</a
-        >
-      </li>
-      {% endfor %}
-    </ul>
-    {% endblock %}
-  </body>
-</html>
+{% extends "master.html" %} {% block title %} My Tennis Club - List of all
+members {% endblock %} {% block content %}
+<div class="mycard">
+  <h1>Members</h1>
+  <ul>
+    {% for x in data %}
+    <li onclick="window.location = '/members/details/{{ x.id }}'">
+      {{ x.firstname }} {{ x.lastname }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
